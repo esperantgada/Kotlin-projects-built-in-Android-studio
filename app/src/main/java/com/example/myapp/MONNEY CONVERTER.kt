@@ -3,17 +3,19 @@ package com.example.myapp
 import java.util.*
 
 fun main(args:Array<String>){
-    var scanner= Scanner(System.`in`)
-     var choice:Int?=null
-    var repeat=true
-    //var taux:Double
-   // var value:Double
+
+    val scanner= Scanner(System.`in`)
+     var choice:Int? = 0
+    var repeat = true
+    var taux : Double
+    var value : Double
+
     println("***********WELCOME TO MONEY CONVERTER***********")
     println("*************************************************")
 
     do {
-        println("Enter the money to convert:")
-        var money:Double=scanner.nextDouble()
+        println("Enter the money to convert: ")
+        val money : Double = scanner.nextDouble()
         println()
 
         println("""
@@ -26,13 +28,24 @@ fun main(args:Array<String>){
          6- XAF to EURO
     """.trimIndent())
         println()
-        println("Enter your choice")
-        choice=Integer.valueOf(readLine())
+
+        println("Enter your choice: ")
+        choice = Integer.valueOf(readLine())
+
+        if (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5 && choice != 6){
+
+            do {
+                println("Invalid answer.Please,enter a correct value: ")
+                choice = Integer.valueOf(readLine())
+            }while (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5 && choice != 6)
+
+        }
+
 
         when(choice){
             1->{
-                var taux=0.848
-                var value=money * taux
+                 taux = 0.848
+                 value = money * taux
                 println("""
                      ***************************************************************
                                      Conversion of $money USD to EURO
@@ -42,8 +55,8 @@ fun main(args:Array<String>){
             }
 
             2->{
-                var taux=1.18
-                var value=money * taux
+                 taux = 1.18
+                 value = money * taux
                 println("""
                      ***************************************************************
                                      Conversion of $money EURO to USD
@@ -53,8 +66,8 @@ fun main(args:Array<String>){
             }
 
             3->{
-                var taux=550.20
-                var value=money * taux
+                 taux = 550.20
+                 value = money * taux
                 println("""
                      ***************************************************************
                                      Conversion of $money USD to XAF
@@ -64,8 +77,8 @@ fun main(args:Array<String>){
             }
 
             4->{
-                var taux=0.002
-                var value=money * taux
+                 taux = 0.002
+                 value = money * taux
                 println("""
                      ***************************************************************
                                      Conversion of $money XAF to USD
@@ -75,8 +88,8 @@ fun main(args:Array<String>){
             }
 
             5->{
-                var taux=648.74
-                var value=money * taux
+                 taux = 648.74
+                 value = money * taux
                 println("""
                      ***************************************************************
                                      Conversion of $money EURO to XAF
@@ -86,8 +99,8 @@ fun main(args:Array<String>){
             }
 
             6->{
-                var taux=0.001
-                var value=money * taux
+                 taux = 0.001
+                 value = money * taux
                 println("""
                      ***************************************************************
                                      Conversion of $money XAF to EURO
@@ -96,7 +109,7 @@ fun main(args:Array<String>){
                  """.trimIndent())
             }
 
-            else-> println("Invalid option")
+            else-> println("Invalid choice!")
         }
 
 
@@ -106,18 +119,7 @@ fun main(args:Array<String>){
         1.Yes       2.No   
     """.trimIndent())
 
-        var response=scanner.nextInt() //Getting the value entered by the user
-
-        do {
-            println("""
-                    Invalid option!
-                    Choose 1 or 2.
-                    Do you want to continue?
-                    1.Yes       2.No
-                """.trimIndent())
-            response=scanner.nextInt()
-
-            }while (response!=1 && response!=2)
+        var response = scanner.nextInt() //Getting the value entered by the user
 
         when (response) {
             1 -> {
@@ -130,7 +132,24 @@ fun main(args:Array<String>){
                 println("Thanks! See you soon.")
             }
 
-            else-> println("See you soon!")
+            else -> do {
+                println(
+                    """
+                    Invalid option!
+                    Choose 1 or 2.
+                    Do you want to continue?
+                    1.Yes       2.No
+                """.trimIndent()
+                )
+                response = scanner.nextInt()
+
+                repeat = if (response == 1) {
+                    true
+                }else {
+                    false
+                }
+
+            } while (response != 1 && response != 2)
 
 
         }
