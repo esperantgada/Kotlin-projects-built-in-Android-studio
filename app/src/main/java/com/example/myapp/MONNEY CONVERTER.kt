@@ -4,8 +4,8 @@ import java.util.*
 
 fun main(args:Array<String>){
 
-    val scanner= Scanner(System.`in`)
-     var choice:Int? = 0
+    val scanner = Scanner(System.`in`)
+     var choice : Int? = 0
     var repeat = true
     var taux : Double
     var value : Double

@@ -29,7 +29,7 @@ fun main(args : Array<String>){
         else -> println("None of the above")
     }
 
-    var month=1
+    var month = 1
     when (month)
     {
         in 3..5 -> println("Spring")
@@ -39,7 +39,7 @@ fun main(args : Array<String>){
         else -> println("None of the above")
     }
 
-    var season=5
+    var season = 5
     when (season)
     {
         1-> print("Spring")
@@ -82,6 +82,6 @@ fun add(a: Int, b:Int): Int{
     return a+b
 }
 
-fun average(a:Double, b:Double): Double{
+fun average(a : Double, b : Double) : Double{
     return (a+b)/2
 }

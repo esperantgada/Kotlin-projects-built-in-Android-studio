@@ -2,11 +2,11 @@ package com.example.myapp
 
 
 fun main(args: Array<String>){
-    val border="%"
-    val  border1="*"
-    val border2=":"
-    val border3="`-._,-'"
-    val  border4=4;
+    val border = "%"
+    val  border1 = "*"
+    val border2 = ":"
+    val border3 = "`-._,-'"
+    val  border4 = 4;
 
     printBorder1(border)
     println("Happy Birthday, Espérant!")
