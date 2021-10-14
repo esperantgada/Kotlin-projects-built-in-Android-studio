@@ -1,6 +1,7 @@
 package com.example.myapp
 
 import java.util.*
+import kotlin.math.roundToLong
 
 fun main(args:Array<String>){
 
@@ -45,7 +46,7 @@ fun main(args:Array<String>){
         when(choice){
             1->{
                  taux = 0.848
-                 value = money * taux
+                 value = (money * taux)
                 println("""
                      ***************************************************************
                                      Conversion of $money USD to EURO
@@ -56,7 +57,7 @@ fun main(args:Array<String>){
 
             2->{
                  taux = 1.18
-                 value = money * taux
+                 value = (money * taux)
                 println("""
                      ***************************************************************
                                      Conversion of $money EURO to USD
@@ -66,8 +67,8 @@ fun main(args:Array<String>){
             }
 
             3->{
-                 taux = 550.20
-                 value = money * taux
+                 taux = 550.2
+                 value = (money * taux).toLong().toDouble()
                 println("""
                      ***************************************************************
                                      Conversion of $money USD to XAF
@@ -78,7 +79,7 @@ fun main(args:Array<String>){
 
             4->{
                  taux = 0.002
-                 value = money * taux
+                 value = (money * taux)
                 println("""
                      ***************************************************************
                                      Conversion of $money XAF to USD
@@ -89,7 +90,7 @@ fun main(args:Array<String>){
 
             5->{
                  taux = 648.74
-                 value = money * taux
+                 value = (money * taux).toLong().toDouble()
                 println("""
                      ***************************************************************
                                      Conversion of $money EURO to XAF
@@ -100,7 +101,7 @@ fun main(args:Array<String>){
 
             6->{
                  taux = 0.001
-                 value = money * taux
+                 value = (money * taux).toLong().toDouble()
                 println("""
                      ***************************************************************
                                      Conversion of $money XAF to EURO
@@ -138,7 +139,7 @@ fun main(args:Array<String>){
                     Invalid option!
                     Choose 1 or 2.
                     Do you want to continue?
-                    1.Yes       2.No
+                    1.Yes     kh  2.No
                 """.trimIndent()
                 )
                 response = scanner.nextInt()
