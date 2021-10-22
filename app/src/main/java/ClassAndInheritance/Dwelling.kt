@@ -12,6 +12,7 @@ abstract class Dwelling(private var residents : Int) {
         return residents < capacity
     }
 
+    /**Others subclasses can add their own elements**/
     abstract fun floorArea() : Double
 
      fun getRoom(){
